@@ -21,7 +21,7 @@ class ActionHandler extends AbstractActionHandler {
     super(props);
     console.log(state);
 
-    let uri = "mongodb://FlameheadSG:ashy007@ds163530.mlab.com:63530/appa-dev";
+    let uri = "mongodb+srv://root:8eT8qdRrj1ftPnwv@metadallion-db-pl1cy.mongodb.net/metadallion";
     mongoose.connect(uri, { useNewUrlParser: true });
 
     // CONNECTION EVENTS
