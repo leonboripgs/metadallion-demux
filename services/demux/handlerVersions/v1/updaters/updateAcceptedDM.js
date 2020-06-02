@@ -1,4 +1,5 @@
-const { Message } = require("../../../../../models");
+
+const { Message } = require("../../../../../schemas")
 
 function parseTokenString(tokenString) {
   const [amountString, symbol] = tokenString.split(" ")
