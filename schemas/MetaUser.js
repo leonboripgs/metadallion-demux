@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-var passportLocalMongoose = require('passport-local-mongoose');
 const { Schema } = mongoose;
 autoIncrement = require('mongoose-auto-increment');
 autoIncrement.initialize(mongoose.connection);
@@ -25,7 +24,6 @@ const MetaUserSchema = new Schema({
   createdAt: { type: Date, default: Date.now()}
 });
 MetaUserSchema.plugin(autoIncrement.plugin, 'data_metausers');
-MetaUserSchema.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model('data_metausers', MetaUserSchema);
 
