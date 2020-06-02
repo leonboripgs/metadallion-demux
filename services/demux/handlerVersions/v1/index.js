@@ -10,7 +10,7 @@ const updaters = [
     apply: updateTransferData
   },
   {
-    actionType: "eosio.token::send_dm",
+    actionType: "eosio.token::senddm",
     apply: updateSentDM
   },
   // {
