@@ -21,7 +21,6 @@ function updateSentDM(state, payload, blockInfo, context) {
     quantity,
     memo,
   } = payload.data;
-
   const { amount, symbol } = parseTokenString(quantity);
   if (!state.volumeBySymbol[symbol]) {
     state.volumeBySymbol[symbol] = amount;
@@ -37,6 +36,7 @@ function updateSentDM(state, payload, blockInfo, context) {
     amount,
     memo,
     status: "sent",
+    transactionId: payload.transactionId
   });
 }
 

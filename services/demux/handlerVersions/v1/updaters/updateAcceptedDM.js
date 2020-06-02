@@ -1,4 +1,4 @@
-const { Messages } = require("../../../../../models");
+const { Message } = require("../../../../../models");
 
 function parseTokenString(tokenString) {
   const [amountString, symbol] = tokenString.split(" ")
@@ -31,9 +31,23 @@ function updateAcceptedDM(state, payload, blockInfo, context) {
   state.totalTransfers += 1;
   context.stateCopy = JSON.parse(JSON.stringify(state));
 
-  const msg = Messages.findByID(msg_id);
-  msg.status = "read";
-  msg.save();
+  Message.findById(msg_id, function(err, msg) {
+    if(err) {
+      console.error("There is no message with Id:", msg_id);
+      return;
+    }
+    console.log(msg);
+    msg.status = "read";
+    msg.updated_at = Date.now();
+    msg.save();
+    console.log("==== Message Accepted ====");
+    console.log(msg);
+    console.log("--------------------------");
+  })
+  // const msg = Message.findByID(msg_id);
+  // msg.status = "read";
+  // msg.updated_at = Date.now();
+  // msg.save();
 }
 
 module.exports = updateAcceptedDM;

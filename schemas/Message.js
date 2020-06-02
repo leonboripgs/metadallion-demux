@@ -9,6 +9,7 @@ const MessageSchema = new Schema({
   amount: Number,
   memo: String,
   status: String,
+  transactionId: String,
   created_at: { type: Date, default: Date.now()},
   updated_at: { type: Date, default: Date.now()}
 });
