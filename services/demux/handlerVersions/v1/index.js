@@ -1,8 +1,8 @@
 const updateTransferData = require('./updaters/updateTransferData');
 const logUpdate = require('./effects/logUpdate');
 const updateSentDM = require('./updaters/updateSentDM');
-const updateAcceptedDM = require('./updaters/updateAcceptedDM');
-const updateCanceledDM = require('./updaters/updateCanceledDM');
+// const updateAcceptedDM = require('./updaters/updateAcceptedDM');
+// const updateCanceledDM = require('./updaters/updateCanceledDM');
 
 const updaters = [
   {
@@ -13,14 +13,14 @@ const updaters = [
     actionType: "eosio.token::send_dm",
     apply: updateSentDM
   },
-  {
-    actionType: "eosio.token::accept_dm",
-    apply: updateAcceptedDM
-  },
-  {
-    actionType: "eosio.token::cancel_dm",
-    apply: updateCanceledDM
-  },
+  // {
+  //   actionType: "eosio.token::accept_dm",
+  //   apply: updateAcceptedDM
+  // },
+  // {
+  //   actionType: "eosio.token::cancel_dm",
+  //   apply: updateCanceledDM
+  // },
 ];
 
 const effects = [

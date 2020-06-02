@@ -1,6 +1,6 @@
 const { AbstractActionHandler } = require("demux");
 const mongoose = require("mongoose");
-const { BlockIndexState } = require("../../models");
+const { BlockIndexState } = require("../../schemas");
 
 // Initial state
 let state = {
