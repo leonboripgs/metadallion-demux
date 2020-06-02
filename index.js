@@ -21,6 +21,7 @@ app.use(bodyParser.urlencoded({
 router(app);
 const port = process.env.PORT || 5001;
 const server = app.listen(port, () => {
+  console.log("========== starting Demux server ==========");
   console.log('Server listening on port:', port)
 });
 io.connect(server);
