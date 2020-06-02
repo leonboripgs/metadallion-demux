@@ -1,5 +1,5 @@
 // const { Messages } = require("../../../../../models");
-const Messages = require("../../../../../schemas")
+const Message = require("../../../../../schemas")
 
 function parseTokenString(tokenString) {
   const [amountString, symbol] = tokenString.split(" ")
@@ -31,7 +31,7 @@ function updateSentDM(state, payload, blockInfo, context) {
   state.totalTransfers += 1;
   context.stateCopy = JSON.parse(JSON.stringify(state));
 
-  Messages.create({
+  Message.create({
     from,
     to,
     amount,
