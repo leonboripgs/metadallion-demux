@@ -1,9 +1,9 @@
 const BlockIndexState = require('./BlockIndexState');
-const MetaUsers = require('./MetaUsers');
+const MetaUser = require('./MetaUser');
 const Message = require('./Message');
 
 module.exports = {
   BlockIndexState,
-  MetaUsers,
+  MetaUser,
   Message,
 };
