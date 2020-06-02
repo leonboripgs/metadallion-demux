@@ -45,10 +45,6 @@ function updateAcceptedDM(state, payload, blockInfo, context) {
     console.log(msg);
     console.log("--------------------------");
   })
-  // const msg = Message.findByID(msg_id);
-  // msg.status = "read";
-  // msg.updated_at = Date.now();
-  // msg.save();
 }
 
 module.exports = updateAcceptedDM;

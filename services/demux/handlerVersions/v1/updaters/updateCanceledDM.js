@@ -31,7 +31,19 @@ function updateCanceledDM(state, payload, blockInfo, context) {
   state.totalTransfers += 1;
   context.stateCopy = JSON.parse(JSON.stringify(state));
 
-  Messages.findByIdAndDelete(msg_id);
+  Message.findById(msg_id, function(err, msg) {
+    if(err) {
+      console.error("There is no message with Id:", msg_id);
+      return;
+    }
+    console.log(msg);
+    msg.status = "canceled";
+    msg.updated_at = Date.now();
+    msg.save();
+    console.log("==== Message Canceled ====");
+    console.log(msg);
+    console.log("--------------------------");
+  })
 }
 
 module.exports = updateCanceledDM;
